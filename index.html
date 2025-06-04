@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Paid Ad Copy Generator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 600px;
+        }
+        
+        .form-section {
+            padding: 40px;
+            background: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+        }
+        
+        .output-section {
+            padding: 40px;
+            background: white;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #34495e;
+            font-size: 0.95rem;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .output-area {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 25px;
+            min-height: 400px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #2c3e50;
+            white-space: pre-line;
+        }
+        
+        .output-area hr {
+            border: none;
+            border-top: 2px solid #667eea;
+            margin: 20px 0;
+            opacity: 0.3;
+        }
+        
+        .output-area strong {
+            color: #667eea;
+            font-size: 1.1rem;
+        }
+        
+        .copy-btn {
+            background: #10ac84;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            width: auto;
+        }
+        
+        .copy-btn:hover {
+            background: #00a085;
+            transform: translateY(-1px);
+        }
+        
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .offer-option {
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            background: white;
+        }
+        
+        .offer-option:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+        
+        .offer-option.active {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-section {
+                border-right: none;
+                border-bottom: 1px solid #e9ecef;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                margin: 10px;
+            }
+            
+            .offer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .tip {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Get Paid Ad Copy Generator</h1>
+            <p>Generate high-converting ad copy using our proven frameworks</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="form-section">
+                <h2 class="section-title">Tell Me About Your Offer</h2>
+                
+                <div class="tip">
+                    <strong>✨ You'll get 4 different versions using our proven frameworks.</strong> We recommend picking 2 versions to test in your ad campaign.
+                </div>
+                
+                <div class="form-group">
+                    <label>What type of offer is this?</label>
+                    <div class="offer-grid">
+                        <div class="offer-option" data-type="lead-magnet">
+                            <div style="font-size: 20px; margin-bottom: 5px;">🎁</div>
+                            <div style="font-size: 12px; font-weight: bold;">Lead Magnet</div>
+                        </div>
+                        <div class="offer-option" data-type="challenge">
+                            <div style="font-size: 20px; margin-bottom: 5px;">🚀</div>
+                            <div style="font-size: 12px; font-weight: bold;">Challenge</div>
+                        </div>
+                        <div class="offer-option" data-type="workshop">
+                            <div style="font-size: 20px; margin-bottom: 5px;">🎯</div>
+                            <div style="font-size: 12px; font-weight: bold;">Workshop</div>
+                        </div>
+                        <div class="offer-option" data-type="low-ticket">
+                            <div style="font-size: 20px; margin-bottom: 5px;">💫</div>
+                            <div style="font-size: 12px; font-weight: bold;">Low-Ticket</div>
+                        </div>
+                        <div class="offer-option" data-type="course">
+                            <div style="font-size: 20px; margin-bottom: 5px;">💎</div>
+                            <div style="font-size: 12px; font-weight: bold;">Course</div>
+                        </div>
+                        <div class="offer-option" data-type="coaching">
+                            <div style="font-size: 20px; margin-bottom: 5px;">⭐</div>
+                            <div style="font-size: 12px; font-weight: bold;">Coaching</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="offerName">What's your offer called?</label>
+                    <input type="text" id="offerName" placeholder="e.g., 7-Day Business Growth Challenge">
+                </div>
+                
+                <div class="form-group">
+                    <label for="targetAudience">Who is your target audience?</label>
+                    <input type="text" id="targetAudience" placeholder="e.g., coaches struggling to find clients">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mainProblem">What's the main problem you solve?</label>
+                    <input type="text" id="mainProblem" placeholder="e.g., not knowing how to attract ideal clients">
+                </div>
+                
+                <div class="form-group">
+                    <label for="keyBenefit">What's the key outcome/benefit?</label>
+                    <input type="text" id="keyBenefit" placeholder="e.g., attract 3-5 ideal clients every month">
+                </div>
+                
+                <div class="form-group" id="priceGroup" style="display: none;">
+                    <label for="pricePoint">Price (numbers only)</label>
+                    <input type="text" id="pricePoint" placeholder="e.g., 97">
+                </div>
+                
+                <div class="form-group">
+                    <label for="deliverables">What's included? (one per line)</label>
+                    <textarea id="deliverables" placeholder="5 daily video trainings&#10;Workbook with exercises&#10;Private Facebook group access" rows="5"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="testimonial">Testimonial or result (optional)</label>
+                    <input type="text" id="testimonial" placeholder="I got 12 new clients in 30 days! - Sarah M.">
+                </div>
+                
+                <div class="form-group">
+                    <label for="urgency">Urgency/scarcity (optional)</label>
+                    <input type="text" id="urgency" placeholder="Only 50 spots available">
+                </div>
+            </div>
+            
+            <div class="output-section">
+                <h2 class="section-title">Your Ad Copy Frameworks</h2>
+                
+                <button class="btn" id="generateBtn">✨ Generate My Get Paid Ad Copy</button>
+                
+                <div class="tip">
+                    <strong>💡 Framework Notes:</strong> Review all 4 versions and pick your 2 favorites to tweak and test. Let your ads run for 3-7 days to get enough data!
+                </div>
+                
+                <div class="output-area" id="outputArea">
+                    Your 4 high-converting ad copy versions will appear here...
+                    
+                    Fill out the form and click "Generate My Get Paid Ad Copy" to create your frameworks!
+                </div>
+                
+                <button class="btn copy-btn" id="copyBtn" style="display: none;">📋 Copy All 4 Versions</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedOfferType = '';
+
+        // Offer type selection
+        document.querySelectorAll('.offer-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.offer-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                selectedOfferType = this.dataset.type;
+                
+                // Show/hide price field
+                const priceGroup = document.getElementById('priceGroup');
+                if (selectedOfferType === 'low-ticket' || selectedOfferType === 'course') {
+                    priceGroup.style.display = 'block';
+                } else {
+                    priceGroup.style.display = 'none';
+                }
+            });
+        });
+
+        // Generate button
+        document.getElementById('generateBtn').addEventListener('click', function() {
+            const offerName = document.getElementById('offerName').value.trim();
+            const targetAudience = document.getElementById('targetAudience').value.trim();
+            const mainProblem = document.getElementById('mainProblem').value.trim();
+            const keyBenefit = document.getElementById('keyBenefit').value.trim();
+            const pricePoint = document.getElementById('pricePoint').value.trim();
+            const deliverables = document.getElementById('deliverables').value.trim();
+            const testimonial = document.getElementById('testimonial').value.trim();
+            const urgency = document.getElementById('urgency').value.trim();
+            
+            if (!selectedOfferType || !offerName || !targetAudience || !mainProblem || !keyBenefit) {
+                document.getElementById('outputArea').innerHTML = 'Please fill out all required fields and select an offer type.';
+                return;
+            }
+            
+            const data = {
+                offerType: selectedOfferType,
+                offerName: offerName,
+                targetAudience: targetAudience,
+                mainProblem: mainProblem,
+                keyBenefit: keyBenefit,
+                pricePoint: pricePoint,
+                deliverables: deliverables,
+                testimonial: testimonial,
+                urgency: urgency
+            };
+            
+            const copy = generateAllFrameworks(data);
+            displayOutput(copy);
+        });
+
+        function generateAllFrameworks(data) {
+            const pas = generatePASCopy(data);
+            const aida = generateAIDACopy(data);
+            const bab = generateBABCopy(data);
+            const story = generateStoryCopy(data);
+            
+            return `<strong>COPY #1 (PAS Framework):</strong><br><br>${pas}<br><br><hr><br><br><strong>COPY #2 (AIDA Framework):</strong><br><br>${aida}<br><br><hr><br><br><strong>COPY #3 (Before/After/Answer):</strong><br><br>${bab}<br><br><hr><br><br><strong>COPY #4 (Story-Based):</strong><br><br>${story}`;
+        }
+
+        function generatePASCopy(data) {
+            const headlines = {
+                'lead-magnet': `Stop ${data.mainProblem}`,
+                'challenge': data.offerName,
+                'workshop': `How to ${data.keyBenefit}`,
+                'low-ticket': `${data.offerName} - $${data.pricePoint}`,
+                'course': data.offerName,
+                'coaching': data.offerName
+            };
+
+            let headline = headlines[data.offerType] || data.offerName;
+            if (headline.length > 50) {
+                headline = headline.substring(0, 47) + '...';
+            }
+
+            const deliverables = formatDeliverables(data.deliverables, '→');
+            const testimonialText = data.testimonial ? `<br><br>"${data.testimonial}"` : '';
+            const urgencyText = data.urgency ? `<br><br>${data.urgency}` : '';
+
+            const ctas = {
+                'lead-magnet': 'DOWNLOAD FREE',
+                'challenge': 'JOIN CHALLENGE',
+                'workshop': 'REGISTER FREE',
+                'low-ticket': 'GET INSTANT ACCESS',
+                'course': 'LEARN MORE',
+                'coaching': 'APPLY NOW'
+            };
+
+            return `<strong>Headline:</strong> ${headline}<br><br><strong>Ad Copy:</strong><br><br>Tired of ${data.mainProblem}? You're not alone.<br><br>Most ${data.targetAudience} are stuck because they don't have the right strategy.<br><br>Every day you wait is another day of frustration. While others are making progress, you're stuck wondering "what if?"<br><br>The truth is, you could keep struggling with this for months (or even years) OR you could finally get the solution that works.<br><br>That's exactly why I created "${data.offerName}" - to give ${data.targetAudience} the exact roadmap to ${data.keyBenefit}.${deliverables}${testimonialText}${urgencyText}<br><br>Ready to transform your results?<br><br><strong>CTA:</strong> ${ctas[data.offerType]}`;
+        }
+
+        function generateAIDACopy(data) {
+            const headlines = {
+                'lead-magnet': `FREE: ${data.offerName}`,
+                'challenge': `Join the ${data.offerName}`,
+                'workshop': `LIVE: ${data.offerName}`,
+                'low-ticket': `Only $${data.pricePoint}: ${data.offerName}`,
+                'course': data.offerName,
+                'coaching': `Work With Me: ${data.offerName}`
+            };
+
+            let headline = headlines[data.offerType] || data.offerName;
+            if (headline.length > 50) {
+                headline = headline.substring(0, 47) + '...';
+            }
+
+            const deliverables = formatDeliverables(data.deliverables, '✓');
+            const testimonialText = data.testimonial ? `<br><br>Real results from real people:<br>"${data.testimonial}"` : '';
+            const urgencyText = data.urgency ? `<br><br>${data.urgency}` : '';
+
+            const ctas = {
+                'lead-magnet': 'GET FREE ACCESS NOW',
+                'challenge': 'SECURE YOUR SPOT',
+                'workshop': 'REGISTER TODAY',
+                'low-ticket': 'BUY NOW FOR $' + data.pricePoint,
+                'course': 'ENROLL NOW',
+                'coaching': 'BOOK DISCOVERY CALL'
+            };
+
+            return `<strong>Headline:</strong> ${headline}<br><br><strong>Ad Copy:</strong><br><br>If you're a ${data.targetAudience} who wants to ${data.keyBenefit} without ${data.mainProblem}, this is for you.<br><br>I've helped hundreds of ${data.targetAudience} overcome ${data.mainProblem} and achieve results they never thought possible.<br><br>The secret? Having the right system and taking consistent action.<br><br>Imagine having the clarity and confidence to move forward without second-guessing yourself. Think about how different your life could be when you're no longer struggling with ${data.mainProblem}.${deliverables}${testimonialText}${urgencyText}<br><br>Ready to make this your reality?<br><br><strong>CTA:</strong> ${ctas[data.offerType]}`;
+        }
+
+        function generateBABCopy(data) {
+            const headlines = {
+                'lead-magnet': 'Transform Your Results',
+                'challenge': 'From Stuck to Success',
+                'workshop': 'Your Breakthrough Awaits',
+                'low-ticket': `Change Everything - $${data.pricePoint}`,
+                'course': data.offerName,
+                'coaching': 'Your Transformation Starts Here'
+            };
+
+            let headline = headlines[data.offerType] || data.offerName;
+            if (headline.length > 50) {
+                headline = headline.substring(0, 47) + '...';
+            }
+
+            const deliverables = formatDeliverables(data.deliverables, '→');
+            const testimonialText = data.testimonial ? `<br><br>"${data.testimonial}"` : '';
+            const urgencyText = data.urgency ? `<br><br>${data.urgency}` : '';
+
+            const ctas = {
+                'lead-magnet': 'GET YOUR TRANSFORMATION',
+                'challenge': 'START YOUR JOURNEY',
+                'workshop': 'CLAIM YOUR SPOT',
+                'low-ticket': 'GET THE ANSWER NOW',
+                'course': 'TRANSFORM TODAY',
+                'coaching': 'BEGIN YOUR BREAKTHROUGH'
+            };
+
+            return `<strong>Headline:</strong> ${headline}<br><br><strong>Ad Copy:</strong><br><br><strong>BEFORE:</strong> You're struggling with ${data.mainProblem}, feeling stuck and frustrated. Most ${data.targetAudience} stay trapped in this cycle for years.<br><br><strong>AFTER:</strong> Imagine confidently ${data.keyBenefit}, knowing exactly what to do and when to do it. Picture the relief of finally having a clear path forward.<br><br><strong>ANSWER:</strong> "${data.offerName}" is the proven system that takes you from where you are now to where you want to be.<br><br>I've watched countless ${data.targetAudience} make this exact transformation. The difference? They had the right roadmap.${deliverables}${testimonialText}${urgencyText}<br><br>Ready to get your answer?<br><br><strong>CTA:</strong> ${ctas[data.offerType]}`;
+        }
+
+        function generateStoryCopy(data) {
+            const headlines = {
+                'lead-magnet': `My ${data.mainProblem} Story`,
+                'challenge': 'How I Discovered...',
+                'workshop': 'The Day Everything Changed',
+                'low-ticket': `My $${data.pricePoint} Solution`,
+                'course': data.offerName,
+                'coaching': 'My Journey to Success'
+            };
+
+            let headline = headlines[data.offerType] || data.offerName;
+            if (headline.length > 50) {
+                headline = headline.substring(0, 47) + '...';
+            }
+
+            const deliverables = formatDeliverables(data.deliverables, '→');
+            const testimonialText = data.testimonial ? `<br><br>Just like Sarah who said: "${data.testimonial}"` : '';
+            const urgencyText = data.urgency ? `<br><br>${data.urgency}` : '';
+
+            const ctas = {
+                'lead-magnet': 'START YOUR STORY',
+                'challenge': 'WRITE YOUR CHAPTER',
+                'workshop': 'JOIN THE JOURNEY',
+                'low-ticket': 'CHANGE YOUR STORY',
+                'course': 'BEGIN YOUR TRANSFORMATION',
+                'coaching': 'REWRITE YOUR FUTURE'
+            };
+
+            return `<strong>Headline:</strong> ${headline}<br><br><strong>Ad Copy:</strong><br><br>Three years ago, I was exactly where you are now.<br><br>Struggling with ${data.mainProblem}, wondering if I'd ever figure it out. I watched other ${data.targetAudience} succeed while I stayed stuck.<br><br>Then everything changed when I discovered the secret to ${data.keyBenefit}.<br><br>It wasn't luck. It wasn't talent. It was having the right system.<br><br>That breakthrough became "${data.offerName}" - the exact method I used to transform my results and help hundreds of ${data.targetAudience} do the same.${deliverables}${testimonialText}${urgencyText}<br><br>Your transformation story starts here.<br><br><strong>CTA:</strong> ${ctas[data.offerType]}`;
+        }
+
+        function formatDeliverables(deliverablesText, bullet) {
+            if (!deliverablesText) return '';
+            
+            const lines = deliverablesText.split('\n').filter(line => line.trim());
+            const formatted = lines.map(line => `${bullet} ${line.trim()}`).join('<br>');
+            
+            return formatted ? `<br><br>${formatted}` : '';
+        }
+
+        function displayOutput(copy) {
+            document.getElementById('outputArea').innerHTML = copy;
+            document.getElementById('copyBtn').style.display = 'block';
+        }
+
+        // Copy to clipboard
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            const outputText = document.getElementById('outputArea').innerText;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(outputText).then(function() {
+                    showCopyConfirmation();
+                });
+            } else {
+                const textArea = document.createElement('textarea');
+                textArea.value = outputText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showCopyConfirmation();
+            }
+        });
+
+        function showCopyConfirmation() {
+            const btn = document.getElementById('copyBtn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '✅ Copied!';
+            btn.style.background = '#10ac84';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '#10ac84';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
